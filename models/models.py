@@ -19,7 +19,7 @@
 
 from odoo import models, fields, api
 
-class departamento(models.model):
+class departamento(models.Model):
 	_name ='proyectos.departamento'
 	_description = 'Define los atributes de un departamento'
 

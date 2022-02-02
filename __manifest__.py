@@ -3,14 +3,13 @@
     'name': "proyectos",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Esta aplicacion es una fuera de serie""",
 
     'description': """
         Long description of module's purpose
     """,
 
-    'author': "My Company",
+    'author': "Ronnie DragonShop",
     'website': "http://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
@@ -32,4 +31,6 @@
     'demo': [
         'demo/demo.xml',
     ],
+
+    'application' : True ,
 }

@@ -26,6 +26,7 @@ class departamento(models.Model):
 	#atributos
 	nombreDpto = fields.Char(string='Nombre departamento', required=True)
 
+
 class empleado(models.Model):
 	_name = 'proyectos.empleado'
 	_description = 'Define los atributos de un empleado'

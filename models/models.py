@@ -17,6 +17,8 @@
 #         for record in self:
 #             record.value2 = float(record.value) / 100
 
+#Comentario
+
 from odoo import models, fields, api
 
 class departamento(models.Model):
@@ -25,6 +27,10 @@ class departamento(models.Model):
 
 	#atributos
 	nombreDpto = fields.Char(string='Nombre departamento', required=True)
+
+	#Relacion entre tablas
+	empleado_id = fields.One2many('proyectos.empleado','departamento_id', string='Departamento')
+
 
 
 class empleado(models.Model):
@@ -38,12 +44,20 @@ class empleado(models.Model):
 	direccionEmpleado = fields.Char(string='Direccion', required=True)
 	telefonoEmpleado = fields.Char(string='Telefono')
 
+	#Relacion entre tablas
+	departamento_id = fields.Many2one('proyectos.departamento', string='Empleados')
+	proyecto_id = fields.Many2many('proyectos.proyecto', string='Proyectos')
+
+
+
 class proyecto(models.Model):
 	_name = 'proyectos.proyecto'
 	_description = 'Atributos de un proyecto'
 
-	#atributos
+	#atributos de proyecto
 	nombreProyecto = fields.Char(string='Nombre proyecto', required=True)
 	tipoProyecto = fields.Selection(string='Tipo de proyecto', selection=[('f','Front-End'),('b','Back-End')], help='Tipo de proyecto al que estas destinado')
 	ciudadProyecto = fields.Char(string='Ciudad')
 	descripcionProyecto = fields.Text(string='descripcion del proyecto')
+
+	empleado_id = fields.Many2many('proyectos.empleado', string='Empleado')

@@ -76,7 +76,6 @@ class proyecto(models.Model):
 	tipoProyecto = fields.Selection(string='Tipo de proyecto', selection=[('f','Front-End'),('b','Back-End')], help='Tipo de proyecto al que estas destinado')
 	ciudadProyecto = fields.Char(string='Ciudad')
 	descripcionProyecto = fields.Text(string='descripcion del proyecto')
-	dias = fields.day(string='dias')
 	fechaInicio = fields.Date(string='Fecha de inicio', required=True)
 	fechaFin = fields.Date(string='Fecha de fin', required=True)
 
